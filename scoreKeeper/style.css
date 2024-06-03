@@ -1,0 +1,154 @@
+body {
+    text-align: center;
+    font-family: Rajdhani, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    color: black;
+    font-size: 3rem;
+}
+
+.placar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0px 5px 15px 2px rgba(0,0,0,0.3);
+}
+
+.nome-placar {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgb(179, 174, 174);
+}
+
+.nome-placar p {
+    margin: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px; 
+}
+
+.game-image {
+    width: 600px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.placar-atual {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.placar-atual h1 {
+    font-weight: 600;
+    width: 100px;
+    margin: 0 10px;
+}
+
+.placar-atual p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.pontos {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.pontos label{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.pontos select {
+    padding: 5px;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(179, 174, 174);
+    font-weight: 600;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.4rem;
+}
+
+.pontos option {
+    font-weight: 600;
+}
+
+
+.botao-pontos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.botao-pontos button {
+    padding: 10px 20px;
+    margin: 0 0.1px;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: Rajdhani, sans-serif;
+    font-weight: 600;
+}
+
+#jogador1 {
+    background-color: #6f00ff;
+}
+
+#jogador1:hover {
+    background-color: #4a00cc;
+}
+
+#jogador2 {
+    background-color: #ff6912;
+}
+
+#jogador2:hover {
+    background-color: #cc5200;
+}
+
+#reset {
+    background-color: #dc3545;
+}
+
+#reset:hover {
+    background-color: #a71d2a;
+}
+
+@media screen and (max-width: 600px) {
+    .placar {
+        width: 100%;
+    }
+
+    .game-image {
+        width: 100%;
+    }
+
+    .botao-pontos button {
+        padding: 10px 10px;
+        font-size: 1rem;
+    }
+    
+}
