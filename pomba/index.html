@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>My Web Page</title>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Paloma_brav%C3%ADa_%28Columba_livia%29%2C_Palacio_de_Nymphenburg%2C_M%C3%BAnich%2C_Alemania01.JPG/800px-Paloma_brav%C3%ADa_%28Columba_livia%29%2C_Palacio_de_Nymphenburg%2C_M%C3%BAnich%2C_Alemania01.JPG" alt="Image 1">
+        
+        <form>
+            <h1>Pomba</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button class="send">Enviar</button>
+        </form>
+    </div>  
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        const button = document.querySelector('.send');
+        button.addEventListener('click', () => {
+            confetti(
+                {
+                    particleCount: 1000,
+                    spread: 900,
+                    origin: { y: 0.5, x: 0.5}
+                }
+            );
+        });
+    </script>
+</body>
+</html>
