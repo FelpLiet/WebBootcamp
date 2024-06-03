@@ -1,0 +1,109 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color-rgb: 0 0 0;
+  --primary-color-rgb: 0 255 255;
+  --horizon-distance: 20vw;
+  --iterations: 5;
+  --speed: 6s;
+  /* --iterations: infinite;  */ /*CPU EXPENSIVE!*/
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 16px;
+  background-color: rgb(65, 63, 63);
+  color: #fff;
+  transition: background-color 1s ease-in-out;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 16px;
+  font-family: roboto;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 8px;
+  margin: 0 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffffff2d;
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #ffffff;
+}
+
+button {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffffff2d;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff4d;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.container h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-family: roboto;
+}
+
+.gif {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://media1.tenor.com/m/CFnF5iWb99MAAAAC/spongebob-idiot-box.gif');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+}
+
+/*mobile*/
+@media (max-width: 600px) {
+  .container {
+    height: 400px;
+  }
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .navBar {
+    flex-direction: column;
+  }
+}
