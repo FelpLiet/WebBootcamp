@@ -2,7 +2,7 @@ const delayedColorChange = (newColor, delay) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       document.body.style.backgroundColor = newColor;
-      console.log("Color Changed to " + newColor)
+      console.log("Color Changed to " + newColor);
       resolve();
     }, delay);
   });
@@ -32,23 +32,22 @@ const delayedColorChange = (newColor, delay) => {
 //   console.log("Promise Rejected with:", err);
 // });
 
-const searchTvShowImg = async (showName) => {
-  try {
-    showName = showName.toLowerCase().split(' ').join('-');
-    const res = await axios.get('https://api.tvmaze.com/search/shows', { params: { q: showName } });
-    const img = res.data[0].show.image.medium;
-    return img;
-  } catch (e) {
-    console.log("Imagem nao encontrada", e);
-  }
-}
-
-const form = document.querySelector('#searchForm');
-const body = document.querySelector('body');
-form.addEventListener('submit', (e) => {
+const form = document.querySelector("#searchForm");
+const container = document.querySelector(".container");
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = form.elements.search.value;
-  const newBg = searchTvShowImg(searchTerm);
-  form.style.backgroundImage = `url(${newBg})`;
-  form.elements.search.value = '';
-}); 
+  fetch(`/search?q=${searchTerm}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if(container.children.length > 1) {
+        container.removeChild(container.lastChild);
+      } 
+      const img = document.createElement("img");
+      img.src = data.photos[0].src.large;
+      container.appendChild(img);
+    })
+    .catch((err) => {
+      console.log("OH NO! ERROR SEARCHING!", err);
+    });
+});
