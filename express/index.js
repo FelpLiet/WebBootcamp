@@ -4,36 +4,55 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const port = 3000;
+const redditData = require("./data/data.json");
 
-app.use(express.static(path.join(__dirname, "../async")));
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
 
 app.get("/", (req, res) => {
-  console.log(__dirname);
-  res.sendFile(path.join(__dirname, "async", "index.html"));
+  res.render("home");
 });
 
-app.get('/search', async (req, res) => {
+app.get("/horses", (req, res) => {
+  const horses = [
+    { horseName: "Spirit", breed: "Mustang" },
+    { horseName: "Rain", breed: "Appaloosa" },
+  ];
+  res.render("horses", { horses });
+});
+
+app.get("/rand", async (req, res) => {
+  const num = Math.floor(Math.random() * 1000);
+  res.render("random", { rand: num });
+});
+
+app.get("/r/:subreddit", (req, res) => {
+  const { subreddit } = req.params;
+  const data = redditData[subreddit];
+  if(data) {
+    res.render("subreddit", { ...data });
+  } else {
+    res.render("notfound", { subreddit });
+  }
+});
+
+app.get("/search", async (req, res) => {
   const { q } = req.query;
   if (!q) {
     res.json({ message: "NOTHING FOUND IF NOTHING SEARCHED" });
   } else {
     try {
-      const response = await axios.get('https://api.pexels.com/v1/search', {
+      const response = await axios.get("https://api.pexels.com/v1/search", {
         params: { query: q },
-        headers: { Authorization: `${process.env.PEXELS_API_KEY}` }
+        headers: { Authorization: `${process.env.PEXELS_API_KEY}` },
       });
       res.json(response.data);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: 'Server error' });
+      res.status(500).json({ message: "Server error" });
     }
   }
-});
-
-
-app.get("/pomba/:tipoPomba", (req, res) => {
-  const { tipoPomba } = req.params;
-  res.send(`<h1>Hello Pomba da especie ${tipoPomba}</h1>`);
 });
 
 app.get("*", (req, res) => {

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horses</title>
+</head>
+<body>
+    <h1>All the Horses</h1>
+    <ul>
+        <% for(let horse of horses) { %>
+            <li><%= horse.horseName %> - <%= horse.breed %></li>
+        <% } %>
+    </ul>
+</body>
+</html>
