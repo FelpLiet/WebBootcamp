@@ -5,13 +5,15 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const redditData = require("./data/data.json");
+const { title } = require("process");
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
 app.get("/", (req, res) => {
-  res.render("home");
+  const title = "Home";
+  res.render("home", { title });
 });
 
 app.get("/horses", (req, res) => {
@@ -19,12 +21,14 @@ app.get("/horses", (req, res) => {
     { horseName: "Spirit", breed: "Mustang" },
     { horseName: "Rain", breed: "Appaloosa" },
   ];
-  res.render("horses", { horses });
+  const title = "Horses";
+  res.render("horses", { horses, title });
 });
 
-app.get("/rand", async (req, res) => {
+app.get("/random", async (req, res) => {
   const num = Math.floor(Math.random() * 1000);
-  res.render("random", { rand: num });
+  const title = "Random Number";
+  res.render("random", { rand: num, title });
 });
 
 app.get("/r/:subreddit", (req, res) => {

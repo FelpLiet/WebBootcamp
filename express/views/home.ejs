@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>Horse Information</title>
-</head>
+<%-include('partials/head')%>
+
 <body>
-    <form>
-        <label for="subreddit"></label>
-        <input type="text" id="subreddit" name="subreddit" placeholder="Enter a subreddit">
-        <button type="submit">Search</button>
-    </form>
-    <script src="/script.js"></script>
+    <%- include('partials/navBar') %>
+    <script src="/js/script.js"></script>
 </body>
 </html>

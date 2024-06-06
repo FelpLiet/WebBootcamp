@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="app.css">
-    <title>Not Found</title>
-</head>
+<%- include('/partials/head') %>
 <body>
-    <h1>404 - Not Found</h1>
-    <p>The subreddit <b><%= subreddit%></b> you are searching for does not exist.</p>
+    <%- include('/partials/navBar') %>
+    <h1>404 - Page Not Found</h1>
+    <p>Sorry, there is nothing here.</p>
+    <script src="/js/script.js"></script>
 </body>
 </html>

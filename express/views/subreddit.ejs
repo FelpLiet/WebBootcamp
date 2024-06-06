@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/app.css">
-    <title><%= name %></title>
-  </head>
-  <body>
+<%-include('partials/head')%>
+<body>
+  <%-include('partials/navBar')%>
+  <div class="container">
     <h1>Navegando em <%= name %> subreddit</h1>
     <h2><%= description %></h2>
     <p><%= subscribers %></p>
-
+    
     <% for(let post of posts){ %>
-    <article>
-        <p><%= post.title %> - <b><%= post.author %></p></b>
-        <% if(post.img){ %>
-            <img src="<%= post.img %>" alt="<%=post.title%>">
-        <% } %>
-        <hr />
-    </article>
-    <% } %>
-  </body>
+  <article>
+    <p><%= post.title %> - <b><%= post.author %></p></b>
+      <% if(post.img){ %>
+          <img src="<%= post.img %>" alt="<%=post.title%>">
+      <% } %>
+      <hr />
+  </article>
+  <% } %>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
 </html>
