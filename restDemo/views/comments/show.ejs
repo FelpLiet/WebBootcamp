@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app.css">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/app.css" />
+  <title>Show</title>
 </head>
 <body>
   <h1>Comment ID: <%= comment.id %></h1>
-  <div class="comment">
+  <div class="comment-show">
     <h3><%= comment.username %></h3>
     <p><%= comment.comment %></p>
+    <div class="opcoes">
+      <form class="edit" action="/comments/<%= comment.id %>/edit" method="GET">
+        <button type="submit">Edit</button>
+      </form>
+      <form class="delete" action="/comments/<%= comment.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
   </div>
-  <a href="/comments">Back</a>
+  </div>
+  <a class="voltar" href="/comments"><img src="https://cdn.icon-icons.com/icons2/2131/PNG/512/back_arrow_icon_131563.png" alt="voltar"> Back</a>
 </body>
 </html>

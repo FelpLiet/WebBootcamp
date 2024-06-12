@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="/app.css" />
     <title>Comments</title>
   </head>
   <body>
@@ -11,8 +11,9 @@
     <div class="comments">
       <%for(let c of comments){ %>
       <div class="comment">
-        <h3><%= c.username %> - <%= c.id %></h3>
+        <h3><%= c.username %></h3>
         <p><%= c.comment %></p>
+        <a href="/comments/<%= c.id %>">more</a>
       </div>
       <% } %>
     </div>

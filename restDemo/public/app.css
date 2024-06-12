@@ -18,12 +18,17 @@ body {
   width: 200px;
   background-color: rgb(65, 63, 63);
   color: #fff;
-  transition: background-color 1s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
   border-radius: 5px;
 }
 
 .comment:hover {
-  background-color: #ffffff2d;
+  background-color: #585858;
+}
+
+.comment a {
+  color: #3295f8;
+  text-decoration: underline;
 }
 
 .comments {
@@ -67,11 +72,12 @@ body {
   border: none;
   background-color: rgb(65, 63, 63);
   color: #fff;
-  transition: background-color 1s ease-in-out;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .form button:hover {
-  background-color: #ffffff2d;
+  background-color: #585858;
 }
 
 .findid {
@@ -98,9 +104,76 @@ body {
   border: none;
   background-color: rgb(65, 63, 63);
   color: #fff;
-  transition: background-color 1s ease-in-out;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .findid button:hover {
-  background-color: #ffffff2d;
+  background-color: #585858;
+}
+
+.comment-show {
+  margin: 7px;
+  padding: 10px;
+  width: 200px;
+  background-color: rgb(65, 63, 63);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.opcoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.opcoes button {
+  margin: 5px;
+  padding: 5px;
+  width: 90px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.edit button {
+  background-color: #3295f8;
+  color: #fff;
+}
+
+.edit button:hover {
+  background-color: #1e6ab0;
+}
+
+.delete button {
+  background-color: #f83232;
+  color: #fff;
+}
+
+.delete button:hover {
+  background-color: #b01e1e;
+}
+
+.voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: #000000;
+  margin: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.voltar img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  
+}
+
+.voltar:hover {
+  transform: scale(1.1);
 }
