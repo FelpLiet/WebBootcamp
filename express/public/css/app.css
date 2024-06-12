@@ -1,7 +1,5 @@
-html,
-body {
-    font-family: roboto, sans-serif;
-  margin: 0;
+html{
+  font-family: roboto, sans-serif;
   padding: 0;
   overflow: hidden;
   height: 100%;
@@ -9,40 +7,40 @@ body {
 }
 
 body {
-  padding: 16px;
+  padding-top: 56px; 
   background-color: rgb(65, 63, 63);
   color: #fff;
   transition: background-color 1s ease-in-out;
 }
 
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  input {
-    padding: 8px;
-    margin: 0 8px;
-    border-radius: 4px;
-    border: none;
-    background-color: #ffffff2d;
-    color: #ffffff;
-  }
-  
-  input::placeholder {
-    color: #ffffff;
-  }
-  
-  button {
-    padding: 8px;
-    border-radius: 4px;
-    border: none;
-    background-color: #ffffff2d;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #ffffff4d;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 8px;
+  margin: 0 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffffff2d;
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #ffffff;
+}
+
+button {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffffff2d;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff4d;
+}

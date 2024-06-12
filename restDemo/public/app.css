@@ -16,10 +16,29 @@ body {
   margin: 7px;
   padding: 10px;
   width: 200px;
+  height: 200px;
   background-color: rgb(65, 63, 63);
   color: #fff;
+  word-wrap: break-word;
+  overflow-y: auto; 
   transition: background-color 0.3s ease-in-out;
   border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .comment:hover {
@@ -58,6 +77,8 @@ body {
   margin: 5px;
   padding: 5px;
   width: 300px;
+  max-width: 600px;
+  max-height: 600px;
   height: 70px;
   border-radius: 5px;
   border: none;
