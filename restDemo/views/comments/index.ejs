@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <h1>Comments</h1>
+    <div class="comments">
+      <%for(let c of comments){ %>
+      <div class="comment">
+        <h3><%= c.username %> - <%= c.id %></h3>
+        <p><%= c.comment %></p>
+      </div>
+      <% } %>
+    </div>
+    <form class="form" action="/comments" method="POST">
+      <input type="text" name="username" placeholder="Username" />
+      <textarea name="comment" placeholder="Comment"></textarea>
+      <button type="submit">Add Comment</button>
+    </form>
+    <form class="findid">
+      <input type="text" name="id" placeholder="Enter the ID" />
+      <button type="submit">Show Comment</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
