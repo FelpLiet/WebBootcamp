@@ -14,12 +14,13 @@
         <p>Category: <%= product.category %></p>
       </div>
       <div class="options">
-        <a class="button" href="/products/<%= product._id %>/edit">Edit</a>
+        <button class="button" id="editButton" data-url="/products/<%= product._id %>/edit">Edit</button>
         <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
           <button class="button">Delete</button>
         </form>
       </div>
       <a href="/products">Back</a>
     </div>
+    <script src="/script.js"></script>
   </body>
 </html>

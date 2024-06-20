@@ -8,11 +8,19 @@
   </head>
   <body>
     <div class="container">
-      <h1>Farm Stand</h1>
+      <div class="header">
+        <div class="logo">
+          <img src="/assets/farm.png" alt="farm logo">
+          <h1>Farm Stand</h1>
+        </div>
+        <button class="button" id="newButton" data-url="/products/new">New Product</button>
+      </div>
       <ul>
         <% products.forEach(product => { %>
         <li class="clickable-li" data-url="/products/<%= product._id %>">
           <strong><%= product.name %></strong> - $<%= product.price %>
+          <br />
+          <small><%= product.category %></small>
           <a class="edit" href="/products/<%= product._id %>/edit">Edit</a>
           <form
             action="/products/<%= product._id %>?_method=DELETE"
