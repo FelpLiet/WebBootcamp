@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const categories = ['fruit', 'vegetable', 'dairy', 'bakery', 'meat', 'seafood' ];
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -13,10 +14,10 @@ const productSchema = new mongoose.Schema({
   category: {
     type: String,
     lowercase: true,
-    enum: ['fruit', 'vegetable', 'dairy']
+    enum: categories
   }
 })
 
 const Product = mongoose.model('Product', productSchema)
 
-module.exports = Product
+module.exports = { Product, categories }

@@ -1,14 +1,28 @@
 html, body {
   font-family: roboto, sans-serif;
-  height: 100%;
   margin: 0;
+  padding: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-body {
-  width: 80%;
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 a {
@@ -23,39 +37,49 @@ a:hover {
 
 .container {
   width: 100%;
+  height: 100%;
   max-width: 850px;
   margin: auto;
-  padding: 0 20px;
-  overflow: hidden;
+  padding: 0 100px;
+  overflow: auto;
 }
 
-ul {
+.productList {
+  margin-top: 20px;
   list-style-type: none;
   padding: 0;
 }
 
-li {
+.productList li {
   background: #f4f4f4;
   padding: 10px;
   margin: 5px 0;
   transition: 0.3s;
 }
 
-li:hover {
+.productList li:hover {
   background: #eaeaea;
   cursor: pointer;
 }
 
 .header {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  width: 100%;
+  padding: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  font-size: 1.6rem;
 }
 
 .logo img {
@@ -66,6 +90,23 @@ li:hover {
 
 .logo h1 {
   margin: 0;
+}
+
+.categoryFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.categoryFilter select {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.categoryFilter button {
+  margin: 5px;
 }
 
 .button {
@@ -92,25 +133,18 @@ li:hover {
 
 .showContainer {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.showContainer strong {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 24px;
+  height: 100vh;
+  width: 100%;
 }
 
 .productInfo {
   display: flex;
   flex-direction: column;
   margin: 5px 0;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .options {
@@ -131,6 +165,7 @@ li:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 500px;
   border: 1px solid #ccc;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -139,7 +174,7 @@ li:hover {
 
 .newContainer a {
   margin-top: 10px;
-
+  
 }
 
 .form {
@@ -168,3 +203,17 @@ li:hover {
   cursor: pointer;
 }
 
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .form {
+    width: 100%;
+  }
+  
+}

@@ -8,18 +8,20 @@
   </head>
   <body>
     <div class="showContainer">
-      <strong><%= product.name %></strong> 
-      <div class="productInfo">
-        <p>Price: $<%= product.price %></p>
-        <p>Category: <%= product.category %></p>
+      <div class="newContainer">
+        <h1><%= product.name %></h1> 
+        <div class="productInfo">
+          <h2>Price: <small>$<%= product.price %></small></h2>
+          <h2>Category: <small><%= product.category %></small></h2>
+        </div>
+        <div class="options">
+          <button class="button" id="editButton" data-url="/products/<%= product._id %>/edit">Edit</button>
+          <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+            <button class="button">Delete</button>
+          </form>
+        </div>
+        <a href="/products">Menu</a>
       </div>
-      <div class="options">
-        <button class="button" id="editButton" data-url="/products/<%= product._id %>/edit">Edit</button>
-        <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
-          <button class="button">Delete</button>
-        </form>
-      </div>
-      <a href="/products">Back</a>
     </div>
     <script src="/script.js"></script>
   </body>

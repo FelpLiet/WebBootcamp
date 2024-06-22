@@ -7,25 +7,25 @@
     <title>New Product</title>
   </head>
   <body>
-    <div class="newContainer">
-      <h1>Edit Product</h1>
-      <form class="form" action="/products/<%= product._id %>?_method=PUT" method="POST">
-        <label for="name">Product Name</label>
-        <input type="text" name="name" id="name" value="<%= product.name %>" required />
-        <label for="price">Price (Unit)</label>
-        <input type="number" name="price" id="price" value="<%= product.price %>" required />
-        <label for="category">Select Category</label>
-        <select name="category" id="category" required>
-          <option value="" disabled>Select a Category</option>
-          <option value="Fruit" <%= product.category === "fruit" ? "selected" : "" %>>Fruit</option>
-          <option value="Vegetable" <%= product.category === "vegetable" ? "selected" : "" %>>Vegetable</option>
-          <option value="Dairy" <%= product.category === "dairy" ? "selected" : "" %>>Dairy</option>
-          <option value="Bakery" <%= product.category === "bakery" ? "selected" : "" %>>Bakery</option>
-          <option value="Meat" <%= product.category === "meat" ? "selected" : "" %>>Meat</option>
-          <option value="Seafood" <%= product.category === "seafood" ? "selected" : "" %>>Seafood</option>
-        </select>
-        <button class="button" type="submit">Update</button>
-      <a href="/products">Back</a>
+    <div class="showContainer">
+      <div class="newContainer">
+        <h1>Edit Product</h1>
+        <form class="form" action="/products/<%= product._id %>?_method=PUT" method="POST">
+          <label for="name">Product Name</label>
+          <input type="text" name="name" id="name" value="<%= product.name %>" required />
+          <label for="price">Price (Unit)</label>
+          <input type="number" name="price" id="price" value="<%= product.price %>" step="0.01" required />
+          <label for="category">Select Category</label>
+          <select name="category" id="category" required>
+            <option value="" disabled>Select a Category</option>
+            <% for(let category of categories) { %>
+            <option value="<%= category %>" <%= category === product.category ? 'selected' : '' %>><%= category %></option>
+            <% } %>
+          </select>
+          <button class="button" type="submit">Update</button>
+        </form>
+        <a href="/products">Menu</a>
+      </div>
     </div>
   </body>
 </html>
